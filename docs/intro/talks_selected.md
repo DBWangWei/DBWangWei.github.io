@@ -1,6 +1,0 @@
----
-tags:
-  - research
----
-
-# Selected Talks

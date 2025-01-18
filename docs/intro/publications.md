@@ -1,8 +1,0 @@
----
-tags:
-  - research
----
-
-# All Publications
-
-
