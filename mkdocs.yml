@@ -59,8 +59,9 @@ nav:
   - About Me: 
     - Introduction: index.md
     - Projects: intro/projects.md
-    - Selected Publications: intro/publications_selected
+    - Selected Publications: intro/publications_selected.md
     - All Publications: intro/publications.md
+    - Selected Talks: intro/talks_selected.md
     - Talks: intro/talks.md
     - Teaching: intro/teaching.md
   - Research: 

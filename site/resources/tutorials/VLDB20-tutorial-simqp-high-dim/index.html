@@ -110,7 +110,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#lastmod-2018-09-09t000000" class="md-skip">
+        <a href="#paper" class="md-skip">
           Skip to content
         </a>
       
@@ -346,6 +346,8 @@
       
         
       
+        
+      
     
     
       
@@ -419,7 +421,7 @@
   
   
     <li class="md-nav__item">
-      <a href="../../../intro/publications_selected" class="md-nav__link">
+      <a href="../../../intro/publications_selected/" class="md-nav__link">
         
   
   <span class="md-ellipsis">
@@ -445,6 +447,27 @@
   
   <span class="md-ellipsis">
     All Publications
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../intro/talks_selected/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Selected Talks
   </span>
   
 
@@ -984,8 +1007,17 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
-        
       
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    VLDB20 - Similarity Query Processing
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -996,6 +1028,56 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#paper" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paper
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Paper">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#abstract" class="md-nav__link">
+    <span class="md-ellipsis">
+      Abstract
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#slides" class="md-nav__link">
+    <span class="md-ellipsis">
+      Slides
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -1076,8 +1158,47 @@
   
   
   
-    
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#paper" class="md-nav__link">
+    <span class="md-ellipsis">
+      Paper
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Paper">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#abstract" class="md-nav__link">
+    <span class="md-ellipsis">
+      Abstract
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#slides" class="md-nav__link">
+    <span class="md-ellipsis">
+      Slides
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -1092,19 +1213,8 @@
                   
 
 
-<p>+++
-title = "VLDB 2020 Tutorial: Similarity Query Processing for High-Dimensional Data"</p>
-<p>date = 2020-08-24T00:00:00</p>
-<h1 id="lastmod-2018-09-09t000000">lastmod = 2018-09-09T00:00:00</h1>
-<p>draft = false  # Is this a draft? true/false
-toc = true  # Show table of contents? true/false
-type = "docs"  # Do not modify.</p>
-<h1 id="add-menu-entry-to-sidebar">Add menu entry to sidebar.</h1>
-<p>linktitle = "VLDB20 Tutorial"
-[menu.resources]
-  parent = "Tutorial"
-  weight = 1
-+++</p>
+  <h1>VLDB20 - Similarity Query Processing</h1>
+
 <p>This is the resource page for our VLDB 2020 tutorial titled "Similarity Query Processing for High-Dimensional Data" by Jianbin Qin, Wei Wang, Chuan Xiao, and Ying Zhang. </p>
 <h2 id="paper">Paper</h2>
 <p>Jianbin Qin, Wei Wang, Chuan Xiao, Ying Zhang: Similarity Query Processing for High-Dimensional Data. Proc. VLDB Endow. 13(12): 3437-3440 (2020) 
@@ -1116,17 +1226,15 @@ have emerged to tackle this long-standing problem theoretically and empirically.
 <h2 id="slides">Slides</h2>
 <p>Slides (updated on 4 Sept 2020):</p>
 <ol>
-<li><a href="/~weiwcs/files/vldb20tutorial/VLDB20-tutorial-1-intro-wang.pdf">Introduction</a></li>
-<li><a href="/~weiwcs/files/vldb20tutorial/VLDB20-tutorial-2-exact-qin.pdf">Exact Query Processing</a></li>
-<li><a href="/~weiwcs/files/vldb20tutorial/VLDB20-tutorial-3a-ANN-wang.pdf">Approximate-1</a></li>
-<li><a href="/~weiwcs/files/vldb20tutorial/VLDB20-tutorial-3b-ANN-wang.pdf">Approximate-2</a></li>
-<li><a href="/~weiwcs/files/vldb20tutorial/VLDB20-tutorial-4-ANN-zhang.pdf">Approximate-3</a></li>
-<li><a href="/~weiwcs/files/vldb20tutorial/VLDB20-tutorial-5-estimation-xiao.pdf">Estimation</a></li>
-<li><a href="/~weiwcs/files/vldb20tutorial/VLDB20-tutorial-6-epilogue-wang.pdf">Open Problems</a></li>
+<li><a href="../files/VLDB20-tutorial-1-intro-wang.pdf">Introduction</a></li>
+<li><a href="../files/VLDB20-tutorial-2-exact-qin.pdf">Exact Query Processing</a></li>
+<li><a href="../files/VLDB20-tutorial-3a-ANN-wang.pdf">Approximate-1</a></li>
+<li><a href="../files/VLDB20-tutorial-3b-ANN-wang.pdf">Approximate-2</a></li>
+<li><a href="../files/VLDB20-tutorial-4-ANN-zhang.pdf">Approximate-3</a></li>
+<li><a href="../files/VLDB20-tutorial-5-estimation-xiao.pdf">Estimation</a></li>
+<li><a href="../files/VLDB20-tutorial-6-epilogue-wang.pdf">Open Problems</a></li>
 </ol>
-<p><a class="glightbox" href="/~weiwcs/files/vldb20tutorial/cover.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Screenshot" src="/~weiwcs/files/vldb20tutorial/cover.png" /></a></p>
-<h2 id="references">References</h2>
-<p>TBA</p>
+<p><a class="glightbox" href="../files/vldb20-cover.png" data-type="image" data-width="auto" data-height="auto" data-desc-position="bottom"><img alt="Screenshot" src="../files/vldb20-cover.png" /></a></p>
 
 
 

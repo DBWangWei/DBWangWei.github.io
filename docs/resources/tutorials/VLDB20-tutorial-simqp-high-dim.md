@@ -1,19 +1,3 @@
-+++
-title = "VLDB 2020 Tutorial: Similarity Query Processing for High-Dimensional Data"
-
-date = 2020-08-24T00:00:00
-# lastmod = 2018-09-09T00:00:00
-
-draft = false  # Is this a draft? true/false
-toc = true  # Show table of contents? true/false
-type = "docs"  # Do not modify.
-
-# Add menu entry to sidebar.
-linktitle = "VLDB20 Tutorial"
-[menu.resources]
-  parent = "Tutorial"
-  weight = 1
-+++
 
 This is the resource page for our VLDB 2020 tutorial titled "Similarity Query Processing for High-Dimensional Data" by Jianbin Qin, Wei Wang, Chuan Xiao, and Ying Zhang. 
 
@@ -38,20 +22,18 @@ In this tutorial, we summarize existing solutions, especially recent advancement
 
 Slides (updated on 4 Sept 2020):
 
-1. [Introduction](/~weiwcs/files/vldb20tutorial/VLDB20-tutorial-1-intro-wang.pdf)
-2. [Exact Query Processing](/~weiwcs/files/vldb20tutorial/VLDB20-tutorial-2-exact-qin.pdf)
-3. [Approximate-1](/~weiwcs/files/vldb20tutorial/VLDB20-tutorial-3a-ANN-wang.pdf)
-4. [Approximate-2](/~weiwcs/files/vldb20tutorial/VLDB20-tutorial-3b-ANN-wang.pdf)
-5. [Approximate-3](/~weiwcs/files/vldb20tutorial/VLDB20-tutorial-4-ANN-zhang.pdf)
-6. [Estimation](/~weiwcs/files/vldb20tutorial/VLDB20-tutorial-5-estimation-xiao.pdf)
-7. [Open Problems](/~weiwcs/files/vldb20tutorial/VLDB20-tutorial-6-epilogue-wang.pdf)
+1. [Introduction](./files/VLDB20-tutorial-1-intro-wang.pdf)
+2. [Exact Query Processing](./files/VLDB20-tutorial-2-exact-qin.pdf)
+3. [Approximate-1](./files/VLDB20-tutorial-3a-ANN-wang.pdf)
+4. [Approximate-2](./files/VLDB20-tutorial-3b-ANN-wang.pdf)
+5. [Approximate-3](./files/VLDB20-tutorial-4-ANN-zhang.pdf)
+6. [Estimation](./files/VLDB20-tutorial-5-estimation-xiao.pdf)
+7. [Open Problems](./files/VLDB20-tutorial-6-epilogue-wang.pdf)
 
 
-![Screenshot](/~weiwcs/files/vldb20tutorial/cover.png)
+![Screenshot](./files/vldb20-cover.png)
 
 
-## References
 
-TBA
 
 
