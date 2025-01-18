@@ -10,7 +10,7 @@
 
 
 /// html | div[style='float: left; width: 30%;']
-![](/~weiwcs/assets/weiw-photo.jpg){width=400, loading=lazy}
+![](weiw-photo.jpg){width=400, loading=lazy}
 ///
 
 /// html | div[style='float: right;width: 65%;']
@@ -45,7 +45,7 @@ My current research interests are:
 
 Also see 
 
-* [my Google Scholar page](https://scholar.google.com/citations?hl=en&user=wLtu3FYAAAAJ&pagesize=100&view_op=list_works) for a fairly up-to-date, manually curated list of publications --- my name is a challenge for Named Entity Disambiguation (e.g., ["The base name with the most different numeric suffixes (i.e., identified authors) is Wei Wang"](https://blog.dblp.org/2020/03/18/name-disambiguation-suffixes-in-dblp/) and motivated me to work on [Entity Resolution](./resources/er21-tutorial-er/)
+* [my Google Scholar page](https://scholar.google.com/citations?hl=en&user=wLtu3FYAAAAJ&pagesize=100&view_op=list_works) for a fairly up-to-date, manually curated list of publications --- my name is a challenge for Named Entity Disambiguation (e.g., ["The base name with the most different numeric suffixes (i.e., identified authors) is Wei Wang"](https://blog.dblp.org/2020/03/18/name-disambiguation-suffixes-in-dblp/) and motivated me to work on [Entity Resolution](./resources/tutorials/ER21-tutorial-entity-resolution.html)
 * [my GitHub page](https://github.com/DBAIWangGroup) for a list of code repositories for my teaching and research. 
 
 # Teaching
@@ -62,4 +62,4 @@ I am the Vice Directors of Guangzhou Municipal Key Laboratory of Materials Infor
 
 # Prospective Student
 
-I am always looking for curious and motivated PhD/MPhil/RA/Visiting student to join our lab at HKUST(GZ). Please read [**this post** for the current vacancy (**2025**)](./page/vacancy.html). 
+I am always looking for curious and motivated PhD/MPhil/RA/Visiting student to join our lab at HKUST(GZ). Please read [**this post** for the current vacancy (**2025**)](./research/vacancy.html). 

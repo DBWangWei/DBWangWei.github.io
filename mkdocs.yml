@@ -75,9 +75,10 @@ nav:
     - Vacancy: research/vacancy.md      
   - Resources:
     - Tutorial:
-      - KDD21 - Similarity Query Processing: research/tutorials/KDD21-tutorial-simqp-high-dim.md
-      - VLDB20 - Similarity Query Processing: research/tutorials/VLDB20-tutorial-simqp-high-dim.md
-      - SIGMOD09 - Keyword Search: research/tutorials/SIGMOD09-tutorial-keywordquery-in-db.md   
+      - ER21 - Entity Resolution: resources/tutorials/ER21-tutorial-entity-resolution.md
+      - KDD21 - Similarity Query Processing: resources/tutorials/KDD21-tutorial-simqp-high-dim.md
+      - VLDB20 - Similarity Query Processing: resources/tutorials/VLDB20-tutorial-simqp-high-dim.md
+      - SIGMOD09 - Keyword Search: resources/tutorials/SIGMOD09-tutorial-keywordquery-in-db.md   
     - Pseudo-random Pix: resources/pix.md
 
 
