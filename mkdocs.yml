@@ -1,0 +1,88 @@
+site_name: Wei Wang's Homepage
+site_url: https://DBWangWei.github.io
+theme:
+  logo: assets/logo.jpg
+  font:
+    text: Roboto Condensed
+    code: Roboto Mono
+  name: material
+  features:
+    - navigation.instant
+    - navigation.instant.prefetch
+    - navigation.instant.progress
+    - navigation.instant.preview
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.expand
+    - navigation.path
+    - navigation.indexes
+    - toc.follow
+    - navigation.top
+  icon:
+    tag:
+      research: fontawesome/solid/atom
+      github: fontawesome/brands/github
+      info: fontawesome/solid/info
+      resource: fontawesome/solid/unlock
+      teaching: fontawesome/solid/question
+extra:
+  tags:
+    research: research
+    github: github
+    info: info
+    resource: resource
+    teaching: teaching
+
+
+extra_css:
+  - stylesheets/extra.css
+
+markdown_extensions: 
+  - attr_list
+  - md_in_html
+  - tables
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.blocks.html
+  - pymdownx.blocks.admonition  
+
+plugins:
+  - glightbox
+  - tags
+  - search
+
+
+nav:
+  - About Me: 
+    - Introduction: index.md
+    - Projects: intro/projects.md
+    - Selected Publications: intro/publications_selected.md
+    - All Publications: intro/publications.md
+    - Selected Talks: intro/talks_selected.md
+    - Talks: intro/talks.md
+    - Teaching: intro/teaching.md
+  - Research: 
+    - Current Research: 
+      - DB: research/DB.md
+      - LLM: research/LLM.md
+      - AI4S: research/AI4S.md
+    - Past Research: 
+      - Similarity Query Processing: research/simqp.md
+      - Keyword Search: research/keywordS.md
+      - Spatial DB: research/spatialdb.md     
+    - Vacancy: research/vacancy.md      
+  - Resources:
+    - Tutorial:
+      - ER21 - Entity Resolution: resources/tutorials/ER21-tutorial-entity-resolution.md
+      - KDD21 - Similarity Query Processing: resources/tutorials/KDD21-tutorial-simqp-high-dim.md
+      - VLDB20 - Similarity Query Processing: resources/tutorials/VLDB20-tutorial-simqp-high-dim.md
+      - SIGMOD09 - Keyword Search: resources/tutorials/SIGMOD09-tutorial-keywordquery-in-db.md   
+    - Pseudo-random Pix: resources/pix.md
+
+
+## comments
+## - To generate gallery: `python3 _gen_gallery.py > pix.md`
+## 
