@@ -54,7 +54,6 @@ plugins:
   - tags
   - search
 
-
 nav:
   - About Me: 
     - Introduction: index.md
