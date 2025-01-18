@@ -10,7 +10,7 @@
 
 
 /// html | div[style='float: left; width: 30%;']
-![](/~weiwcs/assets/weiw-1.jpg){width=400, loading=lazy}
+![](/~weiwcs/assets/weiw-photo.jpg){width=400, loading=lazy}
 ///
 
 /// html | div[style='float: right;width: 65%;']
