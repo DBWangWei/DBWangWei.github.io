@@ -40,7 +40,7 @@ My current research interests are:
 * <mark>Integration of database and artificial intelligence technologies</mark>, including learned indexes, learned algorithms and optimizations, and intelligent data preprocess and postprocessing (e.g., data cleansing/integration and NLP interface for DB/applications). 
 * <mark>Machine Learning and Deep Learning</mark>, including <mark>Large Language Models</mark>, <mark>Natural Language Processing</mark>, <mark>Knowledge graphs</mark>, <mark>Security issues of deep learning models</mark> (e.g, adversarial attacks and defense).
 * <mark>Understanding high-dimensional data</mark>, including its structure, properties, and algorithms (e.g., vector databases). 
-* <mark>Cross-disciplinary research and applications</mark>, including <mark>Material Informatics</mark> (e.g., material property prediction, material design, physics-informed neural networks, sybmolic regression, etc.) and <mark>Electronic Design Automation</mark>. 
+* <mark>Cross-disciplinary research and applications</mark>, including <mark>Material Informatics</mark> (e.g., material property prediction, material design, physics-informed neural networks, sybmolic regression, etc.), <mark>AI for Science</mark> (e.g., neural operator learning for solving PDEs), and <mark>AI for Education</mark>. 
 
 
 Also see 
@@ -50,7 +50,7 @@ Also see
 
 # Teaching
 
-- I am the **Computer Science Coordinator** of HKUST(GZ), in charge of all Computer Science-related courses in the first two years for UG students. 
+- I am the **Computer Science Coordinator** of HKUST(GZ), in charge of all Computer Science-related courses in the first two years for our UG students. 
 - I am also overseeing teaching related issues (including teaching innovation and teaching quality) in the DSA thrust, HKUST(GZ). 
 - Currently, we are building AI4Edu systems based on Large Language Models, with the aim to explore new learning paradigms. 
 

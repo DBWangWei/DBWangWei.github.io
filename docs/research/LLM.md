@@ -1,16 +1,16 @@
 # Large Language Model Research 
 
-I currently work on 
+I am currently working on 
 
 - Small LLM: 
-  - Distillation-based approach
+    - Distillation-based approach
 - Memory mechanism in LLMs
-  - Learning to Edit
+    - Learning to Edit
 - Alignment: 
-  - BMC
-  - Natural evolution
+    - BMC
+    - Natural evolution
 - Deep inference with LLMs
-  - Domain-specific deep inference
+    - Domain-specific deep inference
 - Unified Question Answering
-  - Beyond RAG
+    - Beyond RAG
 - Misc
