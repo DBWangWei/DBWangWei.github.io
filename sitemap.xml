@@ -5,6 +5,10 @@
          <lastmod>2025-01-20</lastmod>
     </url>
     <url>
+         <loc>http://wei-wang.net/DSAA1001/</loc>
+         <lastmod>2025-01-20</lastmod>
+    </url>
+    <url>
          <loc>http://wei-wang.net/DSAA2043/</loc>
          <lastmod>2025-01-20</lastmod>
     </url>
@@ -30,6 +34,10 @@
     </url>
     <url>
          <loc>http://wei-wang.net/intro/teaching/</loc>
+         <lastmod>2025-01-20</lastmod>
+    </url>
+    <url>
+         <loc>http://wei-wang.net/research/</loc>
          <lastmod>2025-01-20</lastmod>
     </url>
     <url>
@@ -78,6 +86,10 @@
     </url>
     <url>
          <loc>http://wei-wang.net/resources/tutorials/VLDB20-tutorial-simqp-high-dim/</loc>
+         <lastmod>2025-01-20</lastmod>
+    </url>
+    <url>
+         <loc>http://wei-wang.net/teaching/</loc>
          <lastmod>2025-01-20</lastmod>
     </url>
 </urlset>
