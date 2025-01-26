@@ -1,0 +1,64 @@
+.pub-title {
+    font-weight: bold;
+    color: #2c3e50;  /* A nice dark blue color */
+}
+
+.pub-authors {
+    font-style: italic;
+    color: #34495e;  /* A slightly lighter blue */
+}
+
+.pub-venue {
+    font-weight: bold;
+    color: #3498db;  /* A bright, readable blue */
+}
+
+.pub-tag {
+    background-color: #2ecc71;  /* Bright green background */
+    color: white;  /* White text */
+    padding: 3px 10px;
+    border-radius: 15px;  /* Larger radius for pill shape */
+    font-size: 0.85em;
+    margin-right: 6px;
+    display: inline-block;
+    /* font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; */
+    font-weight: 600;  /* Slightly bolder for better contrast on dark background */
+    letter-spacing: 0.02em;  /* Slight spacing for better readability */
+}
+
+/* Publication entry layout */
+.pub-entry {
+    display: flex;
+    align-items: baseline;
+    gap: 2em;  /* Space between content and tags */
+    width: 100%;  /* Ensure it takes full width */
+}
+
+.pub-content {
+    flex: 1;  /* Take up remaining space */
+    min-width: 0;  /* Allow content to shrink if needed */
+    padding-right: 1em;  /* Extra space before tags */
+}
+
+.pub-tags {
+    width: 300px;  /* Double the previous width (was 150px) */
+    text-align: left;
+    flex-shrink: 0;  /* Prevent tags from shrinking */
+}
+
+/* List styling */
+ul {
+    list-style-type: disc;  /* Standard bullet points */
+    padding-left: 2em;  /* Standard indentation */
+    margin: 0;
+}
+
+li {
+    margin-bottom: 1.5em;  /* Space between entries */
+    padding-left: 0.5em;  /* Slight indent after bullet */
+}
+
+/* Remove bullet and adjust spacing for the pub-entry container */
+li > .pub-entry {
+    margin-left: -0.5em;  /* Pull back slightly to align with other content */
+}
