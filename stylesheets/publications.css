@@ -11,6 +11,10 @@
 .pub-venue {
     font-weight: bold;
     color: #3498db;  /* A bright, readable blue */
+    background-color: #ebf5fb;  /* Light blue background */
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 0.9em;
 }
 
 .pub-tag {
@@ -21,9 +25,15 @@
     font-size: 0.85em;
     margin-right: 6px;
     display: inline-block;
-    /* font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; */
-    font-weight: 600;  /* Slightly bolder for better contrast on dark background */
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+    font-weight: 500;  /* Slightly bolder for better contrast on dark background */
     letter-spacing: 0.02em;  /* Slight spacing for better readability */
+    transition: all 0.2s ease;  /* Smooth hover effect */
+}
+
+.pub-tag:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 4px rgba(46, 204, 113, 0.2);
 }
 
 /* Publication entry layout */
@@ -32,6 +42,18 @@
     align-items: baseline;
     gap: 2em;  /* Space between content and tags */
     width: 100%;  /* Ensure it takes full width */
+    padding: 0.5em 1em;  /* Reduced vertical padding */
+    border-radius: 4px;  /* Slightly reduced for more compact look */
+    transition: background-color 0.2s ease;  /* Smooth hover effect */
+}
+
+.pub-entry:hover {
+    background-color: #f8f9fa;  /* Light gray background on hover */
+}
+
+/* Zebra striping for entries */
+li:nth-child(even) .pub-entry {
+    background-color: #f8f9fa;  /* Light gray background for even rows */
 }
 
 .pub-content {
@@ -46,19 +68,44 @@
     flex-shrink: 0;  /* Prevent tags from shrinking */
 }
 
+/* Year separator styling */
+.year-separator {
+    font-size: 1.3em;  /* Slightly smaller */
+    color: #2c3e50;
+    margin: 1em 0 0.5em;  /* Reduced margins */
+    padding-bottom: 0.3em;  /* Reduced padding */
+    border-bottom: 2px solid #eee;
+}
+
 /* List styling */
 ul {
-    list-style-type: disc;  /* Standard bullet points */
-    padding-left: 2em;  /* Standard indentation */
+    list-style-type: none;  /* Remove bullets as we have cards now */
+    padding-left: 0;  /* Remove default padding */
     margin: 0;
 }
 
 li {
-    margin-bottom: 1.5em;  /* Space between entries */
-    padding-left: 0.5em;  /* Slight indent after bullet */
+    margin-bottom: 0.2em;  /* Reduced spacing between entries */
 }
 
-/* Remove bullet and adjust spacing for the pub-entry container */
-li > .pub-entry {
-    margin-left: -0.5em;  /* Pull back slightly to align with other content */
+/* Tooltip styling */
+[data-tooltip] {
+    position: relative;
+    cursor: help;
+}
+
+[data-tooltip]:hover::before {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 4px 8px;
+    background-color: #34495e;
+    color: white;
+    font-size: 0.8em;
+    border-radius: 4px;
+    white-space: nowrap;
+    z-index: 1;
+    margin-bottom: 5px;
 }
