@@ -38,9 +38,10 @@
 
 /* Publication entry layout */
 .pub-entry {
-    display: flex;
-    align-items: baseline;
-    gap: 2em;  /* Space between content and tags */
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(120px, 22%);
+    align-items: start;
+    gap: 0.6em 1.25em;
     width: 100%;  /* Ensure it takes full width */
     padding: 0.5em 1em;  /* Reduced vertical padding */
     border-radius: 4px;  /* Slightly reduced for more compact look */
@@ -57,15 +58,27 @@ li:nth-child(even) .pub-entry {
 }
 
 .pub-content {
-    flex: 1;  /* Take up remaining space */
     min-width: 0;  /* Allow content to shrink if needed */
-    padding-right: 1em;  /* Extra space before tags */
 }
 
 .pub-tags {
-    width: 300px;  /* Double the previous width (was 150px) */
-    text-align: left;
-    flex-shrink: 0;  /* Prevent tags from shrinking */
+    min-width: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.45em 0.5em;
+    justify-content: flex-end;
+    align-self: start;
+}
+
+@media (max-width: 900px) {
+    .pub-entry {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 0.5em;
+    }
+
+    .pub-tags {
+        justify-content: flex-start;
+    }
 }
 
 /* Year separator styling */
