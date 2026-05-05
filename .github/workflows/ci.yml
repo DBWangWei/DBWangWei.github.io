@@ -26,9 +26,12 @@ jobs:
             mkdocs-material-
       - name: Install dependencies
         run: |
-          pip install mkdocs
-          pip install mkdocs-glightbox
+          pip install -r requirements.txt
           pip install mkdocs-material
+
+      - name: Build Publications
+        run: |
+          python3 tools/publications/build_publications.py
 
       - name: Build Site
         run: |
