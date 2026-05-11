@@ -109,6 +109,8 @@
 [hidden] {
     display: none !important;
 }
+
+.pub-entry {
     display: grid;
     grid-template-columns: minmax(0, 1fr) minmax(120px, 22%);
     align-items: start;

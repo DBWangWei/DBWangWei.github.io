@@ -1238,7 +1238,6 @@
 
 
 
-<p><link rel="stylesheet" href="../../assets/stylesheets/publications.css"></p>
 <h1 id="all-publications">All Publications</h1>
 <div class="pub-filters" data-selected-tag="" data-selected-venue="">
   <div class="pub-filter-group" data-filter-group="tags">
@@ -2805,60 +2804,6 @@
 </li>
 
 </ul>
-<script>
-function applyPublicationFilters() {
-  document.querySelectorAll('.pub-filters').forEach(function(filters) {
-    const selectedTag = filters.dataset.selectedTag || '';
-    const selectedVenue = filters.dataset.selectedVenue || '';
-    const entries = Array.from(document.querySelectorAll('[data-publication-entry="true"]'));
-    const yearHeaders = Array.from(document.querySelectorAll('[data-publication-year]'));
-    entries.forEach(function(entry) {
-      const tags = (entry.dataset.tags || '').split(/\s+/).filter(Boolean);
-      const venue = entry.dataset.venue || '';
-      const matchesTag = !selectedTag || tags.includes(selectedTag);
-      const matchesVenue = !selectedVenue || venue === selectedVenue;
-      entry.parentElement.hidden = !(matchesTag && matchesVenue);
-    });
-    yearHeaders.forEach(function(header) {
-      const year = header.dataset.publicationYear;
-      const hasVisibleEntries = entries.some(function(entry) {
-        return entry.dataset.year === year && !entry.parentElement.hidden;
-      });
-      header.hidden = !hasVisibleEntries;
-    });
-    filters.querySelectorAll('.pub-filter-chip').forEach(function(chip) {
-      const isTag = chip.dataset.filterGroup === 'tags';
-      const activeValue = isTag ? selectedTag : selectedVenue;
-      const isActive = chip.dataset.value === activeValue;
-      chip.classList.toggle('is-active', isActive);
-      chip.setAttribute('aria-pressed', isActive ? 'true' : 'false');
-    });
-  });
-}
-document.addEventListener('DOMContentLoaded', function() {
-  document.querySelectorAll('.pub-filters').forEach(function(filters) {
-    filters.querySelectorAll('.pub-filter-chip').forEach(function(chip) {
-      chip.addEventListener('click', function() {
-        if (chip.dataset.filterGroup === 'tags') {
-          filters.dataset.selectedTag = filters.dataset.selectedTag === chip.dataset.value ? '' : chip.dataset.value;
-        } else {
-          filters.dataset.selectedVenue = filters.dataset.selectedVenue === chip.dataset.value ? '' : chip.dataset.value;
-        }
-        applyPublicationFilters();
-      });
-    });
-    const clearButton = filters.querySelector('.pub-filter-clear');
-    if (clearButton) {
-      clearButton.addEventListener('click', function() {
-        filters.dataset.selectedTag = '';
-        filters.dataset.selectedVenue = '';
-        applyPublicationFilters();
-      });
-    }
-  });
-  applyPublicationFilters();
-});
-</script>
 
 
 
@@ -2920,6 +2865,8 @@ document.addEventListener('DOMContentLoaded', function() {
     
     
       <script src="../../assets/javascripts/bundle.525ec568.min.js"></script>
+      
+        <script src="../../javascripts/publication-filters.js"></script>
       
     
   <script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
