@@ -193,7 +193,144 @@ def test_build_publications_generates_cache_report_and_pages(tmp_path):
     assert "Shared Duplicate Title" in all_md
 
 
-def test_build_publications_preserves_sync_duplicate_warnings(tmp_path):
+def test_build_publications_emits_filter_markup_and_metadata(tmp_path):
+    bib_path = write_text(
+        tmp_path / "merged.bib",
+        """
+        @InProceedings{selected2026,
+          title = {Elastic Index Selection for Label-Hybrid {AKNN} Search},
+          author = {Mingyu Yang and Wei Wang},
+          booktitle = {VLDB},
+          year = {2026}
+        }
+
+        @InProceedings{llm2025,
+          title = {Detoxifying Large Language Models via the Diversity of Toxic Samples},
+          author = {Ying Zhao and Wei Wang},
+          booktitle = {EMNLP},
+          year = {2025}
+        }
+        """,
+    )
+    overrides_path = write_text(
+        tmp_path / "overrides.json",
+        """
+        {
+          "selected2026": {
+            "selected": true,
+            "areas": ["ANN", "High-Dim"]
+          },
+          "llm2025": {
+            "areas": ["LLM"]
+          }
+        }
+        """,
+    )
+    selected_page = tmp_path / "publications_selected.md"
+    all_page = tmp_path / "publications.md"
+
+    subprocess.run(
+        [
+            "python3",
+            "tools/publications/build_publications.py",
+            "--bib",
+            str(bib_path),
+            "--overrides",
+            str(overrides_path),
+            "--cache",
+            str(tmp_path / "publications.cache.json"),
+            "--report",
+            str(tmp_path / "publications.report.json"),
+            "--selected-page",
+            str(selected_page),
+            "--all-page",
+            str(all_page),
+        ],
+        check=True,
+    )
+
+    selected_md = selected_page.read_text(encoding="utf-8")
+    all_md = all_page.read_text(encoding="utf-8")
+
+    assert 'class="pub-filters"' in all_md
+    assert 'data-filter-group="tags"' in all_md
+    assert 'data-filter-group="venues"' in all_md
+    assert 'Clear filters' in all_md
+    assert 'data-tags="ann high-dim vldb"' in selected_md
+    assert 'data-venue="vldb"' in selected_md
+    assert 'data-year="2026"' in selected_md
+    assert 'function applyPublicationFilters()' not in all_md
+    assert '<script>' not in all_md
+    assert 'data-publication-entry="true"' in all_md
+    assert 'data-publication-year="2026"' in all_md
+    assert 'data-selected-tag' in all_md
+
+
+
+
+def test_build_publications_emits_award_and_venue_family_tags(tmp_path):
+    bib_path = write_text(
+        tmp_path / "merged.bib",
+        """
+        @Article{pvldb2024,
+          title = {A VLDB Endowment Paper},
+          author = {Alice Example and Wei Wang},
+          journal = {Proceedings of the VLDB Endowment},
+          year = {2024}
+        }
+
+        @InProceedings{sigcomm2022,
+          title = {A SIGCOMM Award Paper},
+          author = {Bob Example and Wei Wang},
+          booktitle = {SIGCOMM},
+          award = {Best Paper},
+          year = {2022}
+        }
+        """,
+    )
+    overrides_path = write_text(
+        tmp_path / "overrides.json",
+        """
+        {
+          "pvldb2024": {
+            "areas": ["DB"]
+          },
+          "sigcomm2022": {
+            "areas": ["Graph"]
+          }
+        }
+        """,
+    )
+    all_page = tmp_path / "publications.md"
+
+    subprocess.run(
+        [
+            "python3",
+            "tools/publications/build_publications.py",
+            "--bib",
+            str(bib_path),
+            "--overrides",
+            str(overrides_path),
+            "--cache",
+            str(tmp_path / "publications.cache.json"),
+            "--report",
+            str(tmp_path / "publications.report.json"),
+            "--selected-page",
+            str(tmp_path / "publications_selected.md"),
+            "--all-page",
+            str(all_page),
+        ],
+        check=True,
+    )
+
+    all_md = all_page.read_text(encoding="utf-8")
+
+    assert '<span class="pub-venue">Proceedings of the VLDB Endowment</span>' in all_md
+    assert '<span class="pub-tag" data-tooltip="VLDB">VLDB</span>' in all_md
+    assert '<span class="pub-tag" data-tooltip="Best Paper">Best Paper</span>' in all_md
+    assert 'data-tags="db vldb"' in all_md
+    assert 'data-tags="graph best-paper"' in all_md
+    assert '<div class="pub-comment">Best Paper</div>' in all_md
     bib_path = write_text(
         tmp_path / "merged.bib",
         """

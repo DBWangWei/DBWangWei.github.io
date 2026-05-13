@@ -50,8 +50,8 @@ def test_repo_publication_pages_build_from_repo_data(tmp_path):
 
     assert cache["summary"]["all_count"] > 0
     assert cache["summary"]["selected_count"] > 0
-    assert selected_md.count('<div class="pub-entry">') == cache["summary"]["selected_count"]
-    assert all_md.count('<div class="pub-entry">') == cache["summary"]["all_count"]
+    assert selected_md.count('<div class="pub-entry" data-publication-entry="true"') == cache["summary"]["selected_count"]
+    assert all_md.count('<div class="pub-entry" data-publication-entry="true"') == cache["summary"]["all_count"]
 
 
 def test_repo_all_2026_publications_are_selected(tmp_path):
@@ -76,7 +76,48 @@ def test_repo_all_2026_publications_are_selected(tmp_path):
     assert all(record["selected"] for record in records_2026)
 
 
-def test_mkdocs_build_succeeds_after_publications_refresh(tmp_path):
+def test_publication_filter_javascript_is_loaded_globally():
+    mkdocs = Path("mkdocs.yml").read_text(encoding="utf-8")
+    script = Path("docs/javascripts/publication-filters.js").read_text(encoding="utf-8")
+
+    assert "javascripts/publication-filters.js" in mkdocs
+    assert "function initializePublicationFilters(root)" in script
+    assert "document$.subscribe(initializePublicationFilters)" in script
+    assert "DOMContentLoaded" in script
+
+
+def test_publications_css_prioritizes_content_and_wraps_tags():
+    css = Path("docs/stylesheets/publications.css").read_text(encoding="utf-8")
+
+    assert ".pub-entry {" in css
+    assert "grid-template-columns" in css
+    assert "flex-wrap: wrap;" in css
+    assert "@media (max-width: 900px)" in css
+    assert ".pub-filters" in css
+    assert ".pub-filter-chip" in css
+    assert ".pub-filter-chip.is-active" in css
+    assert "[hidden]" in css or ".is-hidden" in css
+    assert "width: 300px;" not in css
+
+
+
+
+def test_merged_bib_uses_canonical_venue_names():
+    bib = Path("data/publications/merged.bib").read_text(encoding="utf-8")
+
+    assert "SIGCOMM (Best Paper)" not in bib
+    assert "ICMR (Best Paper)" not in bib
+    assert "SIGIR 2020" not in bib
+    assert "SIGMOD Conference 2020" not in bib
+    assert "IEEE Transactions on Data and Knowledge Engineering" not in bib
+    assert "journal      = {IEEE Transactions on Knowledge and Data Engineering}" in bib
+    assert "Computers and Chemical Engineering" not in bib
+    assert "Proceedings of the VLDB Endowment" in bib
+    assert "ACM Transactions on the Web" in bib
+    assert "IEEE Transactions on Knowledge and Data Engineering" in bib
+    assert "Computers & Chemical Engineering" in bib
+
+
     cache_path = Path("data/publications/publications.cache.json")
     report_path = Path("data/publications/publications.report.json")
     subprocess.run(

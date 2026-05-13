@@ -17,7 +17,6 @@ theme:
     - navigation.sections
     - navigation.expand
     - navigation.path
-    - navigation.indexes
     - toc.follow
     - navigation.top
   icon:
@@ -38,8 +37,12 @@ extra:
 
 extra_css:
   - stylesheets/extra.css
+  - stylesheets/publications.css
 
-markdown_extensions: 
+extra_javascript:
+  - javascripts/publication-filters.js
+
+markdown_extensions:
   - attr_list
   - md_in_html
   - tables
@@ -58,6 +61,7 @@ plugins:
 nav:
   - About Me: 
     - Introduction: index.md
+    - Research: research/index.md
     - Projects: intro/projects.md
     - Selected Publications: intro/publications_selected.md
     - All Publications: intro/publications.md
@@ -65,6 +69,7 @@ nav:
     - Talks: intro/talks.md
     - Teaching: intro/teaching.md
   - Research: 
+    - Overview: research/index.md
     - Current Research: 
       - DB: research/DB.md
       - LLM: research/LLM.md
@@ -73,7 +78,11 @@ nav:
       - Similarity Query Processing: research/simqp.md
       - Keyword Search: research/keywordS.md
       - Spatial DB: research/spatialdb.md     
-    - Vacancy: research/vacancy.md      
+    - Vacancy: research/vacancy.md
+  - Teaching:
+    - Overview: teaching/index.md
+    - DSAA1001: DSAA1001/index.md
+    - DSAA2043: DSAA2043/index.md
   - Resources:
     - Tutorial:
       - ER21 - Entity Resolution: resources/tutorials/ER21-tutorial-entity-resolution.md

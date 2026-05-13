@@ -29,6 +29,9 @@ AREA_TOOLTIPS = {
     "ANN": "Approximate Nearest Neighbor",
     "AdvML": "Adversarial ML",
     "App": "Applications",
+    "Best Paper": "Best Paper",
+    "Best Student Paper": "Best Student Paper",
+    "Best Vision Paper": "Best Vision Paper",
     "DB": "Database Systems",
     "DL": "Deep Learning",
     "Graph": "Graph",
@@ -36,7 +39,69 @@ AREA_TOOLTIPS = {
     "LLM": "Large Language Models",
     "PDE": "Partial Differential Equations",
     "Theory": "Theory",
+    "Top 3% Paper": "Top 3% Paper",
+    "VLDB": "VLDB",
     "XAI": "Explainable AI",
+}
+
+CANONICAL_VENUES = {
+    "27th International Conference on Database and Expert Systems Applications (DEXA 2016)": "DEXA",
+    "ACL (Findings)": "ACL Findings",
+    "Chinese Journal of Computers (CJC)": "Chinese Journal of Computers",
+    "Computers and Chemical Engineering": "Computers & Chemical Engineering",
+    "CoRR": "arXiv",
+    "CSUR": "ACM Computing Surveys",
+    "EMNLP (Findings)": "EMNLP Findings",
+    "ICDE 2005": "ICDE",
+    "IEEE Trans Pattern Anal Mach Intell": "IEEE Transactions on Pattern Analysis and Machine Intelligence",
+    "IEEE Trans. Ind. Informatics": "IEEE Transactions on Industrial Informatics",
+    "IEEE Trans. Netw. Sci. Eng.": "IEEE Transactions on Network Science and Engineering",
+    "IEEE Transactions on Data and Knowledge Engineering": "IEEE Transactions on Knowledge and Data Engineering",
+    "Information Systems (IS)": "Information Systems",
+    "JCST": "Journal of Computer Science and Technology",
+    "JIIS": "Journal of Intelligent Information Systems",
+    "Proceedings of the 13th Italian Symposium on Advanced Database Systems (SEBD 2005)": "SEBD",
+    "Proceedings of the 22nd ACM SIGMOD International Conference on Management of Data (SIGMOD 2003)": "SIGMOD",
+    "Proceedings of the 23rd ACM SIGMOD International Conference on Management of Data (SIGMOD 2004)": "SIGMOD",
+    "Proceedings of the 23rd International Conference on Extending Database Technology, EDBT 2020": "EDBT",
+    "Proceedings of the 30th ACM SIGMOD International Conference on Management of Data (SIGMOD 2011)": "SIGMOD",
+    "Proceedings of the Joint EDBT/ICDT 2013 Workshops": "EDBT/ICDT Workshops",
+    "PVLDB": "Proceedings of the VLDB Endowment",
+    "SIGCOMM (Best Paper)": "SIGCOMM",
+    "SIGIR 2020": "SIGIR",
+    "SIGMOD Conference 2020": "SIGMOD",
+    "TODS": "ACM Transactions on Database Systems",
+    "TKDE": "IEEE Transactions on Knowledge and Data Engineering",
+    "TWEB": "ACM Transactions on the Web",
+    "The 18th International Conference on Web Information Systems Engineering (WISE 2017)": "WISE",
+    "The 22nd International Conference on Scientific and Statistical Database Management (SSDBM 2010)": "SSDBM",
+    "The 22nd Pacific-Asia Conference on Knowledge Discovery and Data Mining (PAKDD 2018)": "PAKDD",
+    "The 23rd International Conference on Database Systems for Advanced Applications (DASFAA 2018)": "DASFAA",
+    "The 24th International Conference on Database Systems for Advanced Applications (DASFAA 2019)": "DASFAA",
+    "The 26th ACM International Conference on Information and Knowledge Management (CIKM 2017)": "CIKM",
+    "The 27th Australasian Database Conference (ADC 2016)": "ADC",
+    "The 27th International Joint Conference on Artificial Intelligence (IJCAI 2018)": "IJCAI",
+    "The 28th International Joint Conference on Artificial Intelligence (IJCAI 2019)": "IJCAI",
+    "The 33rd AAAI Conference on Artificial Intelligence (AAAI 2019)": "AAAI",
+    "The 34th AAAI Conference on Artificial Intelligence (AAAI 2020)": "AAAI",
+    "The 34th IEEE International Conference on Data Engineering (ICDE 2018)": "ICDE",
+    "The 35th AAAI Conference on Artificial Intelligence (AAAI 2021)": "AAAI",
+    "The 35th ACM SIGMOD International Conference on Management of Data (SIGMOD 2016)": "SIGMOD",
+    "The 35th International Conference on Data Engineering (ICDE 2019)": "ICDE",
+    "The 36th International Conference on Data Engineering (ICDE 2020)": "ICDE",
+    "The 40th International ACM SIGIR Conference on Research and Development in Information Retrieval (SIGIR 2017)": "SIGIR",
+    "The 56th Annual Meeting of Computational Linguistics (ACL 2018)": "ACL",
+    "The 57th Annual Meeting of Computational Linguistics (ACL 2019)": "ACL",
+    "The Third International Workshop on XML Data Management": "XMLDM",
+    "VLDB J": "The VLDB Journal",
+    "VLDB Journal": "The VLDB Journal",
+    "WWW J": "World Wide Web",
+    "WWWJ": "World Wide Web",
+}
+
+VENUE_FAMILY_TAGS = {
+    "Proceedings of the VLDB Endowment": ["VLDB"],
+    "VLDB": ["VLDB"],
 }
 
 AREA_ALIASES = {
@@ -157,6 +222,23 @@ def normalize_area_tag(tag: str) -> str:
     raw = normalize_whitespace(tag)
     key = re.sub(r"[^A-Za-z0-9]+", "", raw).upper()
     return AREA_ALIASES.get(key, raw)
+
+
+def normalize_filter_value(value: str) -> str:
+    normalized = normalize_whitespace(value).casefold()
+    return re.sub(r"[^a-z0-9]+", "-", normalized).strip("-")
+
+
+def unique_filter_values(values: list[str]) -> list[str]:
+    unique: list[str] = []
+    seen: set[str] = set()
+    for value in values:
+        key = normalize_filter_value(value)
+        if not key or key in seen:
+            continue
+        seen.add(key)
+        unique.append(value)
+    return unique
 
 
 def split_authors(author_field: str) -> list[str]:
@@ -349,13 +431,42 @@ def bootstrap_overrides_from_selected_page(
     return dict(sorted(existing_overrides.items())), unmatched
 
 
+def canonicalize_venue(venue: str) -> str:
+    venue = strip_braces(venue)
+    return CANONICAL_VENUES.get(venue, venue)
+
+
+def venue_family_tags(venue: str) -> list[str]:
+    return VENUE_FAMILY_TAGS.get(venue, [])
+
+
+def award_for_entry(entry: dict[str, Any], override: dict[str, Any]) -> str | None:
+    award = normalize_whitespace(str(override.get("award") or entry.get("award") or ""))
+    return award or None
+
+
+def note_for_entry(entry: dict[str, Any], override: dict[str, Any], award: str | None) -> str | None:
+    note = normalize_whitespace(str(override.get("note") or entry.get("note") or award or ""))
+    return note or None
+
+
+def display_tags_for_record(areas: list[str], venue: str, award: str | None) -> list[str]:
+    tags = areas + venue_family_tags(venue)
+    if award:
+        tags.append(award)
+    return unique_filter_values(tags)
+
+
 def build_record(entry: dict[str, Any], override: dict[str, Any]) -> dict[str, Any]:
     title = strip_braces(str(entry.get("title", "")))
     authors = split_authors(str(entry.get("author", "")))
-    venue = venue_for_entry(entry)
+    venue = canonicalize_venue(venue_for_entry(entry))
     override_areas = [normalize_area_tag(area) for area in override.get("areas", []) if normalize_whitespace(area)]
     inferred_areas = infer_areas(title, venue)
     areas = override_areas or inferred_areas
+    award = award_for_entry(entry, override)
+    note = note_for_entry(entry, override, award)
+    tags = display_tags_for_record(areas, venue, award)
     provenance = {
         "areas": "manual" if override_areas else "inferred",
         "selected": "manual" if "selected" in override else "default",
@@ -372,10 +483,11 @@ def build_record(entry: dict[str, Any], override: dict[str, Any]) -> dict[str, A
         "year": safe_int(entry.get("year")),
         "selected": bool(override.get("selected", False)),
         "areas": areas,
+        "tags": tags,
         "pdf": override.get("pdf") or None,
         "url": choose_canonical_url(entry, override),
-        "note": override.get("note") or override.get("award") or None,
-        "award": override.get("award") or None,
+        "note": note,
+        "award": award,
         "provenance": provenance,
         "fingerprint": fingerprint_for_entry(entry),
         "sort_key": [safe_int(entry.get("year")), normalize_title(title), entry["ID"]],
@@ -419,19 +531,54 @@ def render_record(record: dict[str, Any], output_page: Path) -> str:
     links_html = f' <span class="pub-links">{" ".join(links)}</span>' if links else ""
     note_html = f' <div class="pub-comment">{escape(str(record["note"]))}</div>' if record.get("note") else ""
     tags_html = " ".join(
-        f'<span class="pub-tag" data-tooltip="{escape(AREA_TOOLTIPS.get(area, area), quote=True)}">{escape(area)}</span>'
-        for area in record.get("areas", [])
+        f'<span class="pub-tag" data-tooltip="{escape(AREA_TOOLTIPS.get(tag, tag), quote=True)}">{escape(tag)}</span>'
+        for tag in record.get("tags", record.get("areas", []))
     )
+    tag_values = " ".join(
+        normalize_filter_value(tag)
+        for tag in record.get("tags", record.get("areas", []))
+        if normalize_filter_value(tag)
+    )
+    venue_value = normalize_filter_value(record["venue"])
     return "\n".join(
         [
             "<li>",
-            '  <div class="pub-entry">',
+            f'  <div class="pub-entry" data-publication-entry="true" data-tags="{escape(tag_values, quote=True)}" data-venue="{escape(venue_value, quote=True)}" data-year="{record["year"]}">',
             f'    <div class="pub-content"><span class="pub-title">{escape(record["title"])}</span>, <span class="pub-authors">{escape(record["authors_display"])}</span>. <span class="pub-venue">{escape(record["venue"])}</span>, {record["year"]}.{links_html}{note_html}</div>',
             f'    <div class="pub-tags">{tags_html}</div>',
             "  </div>",
             "</li>",
         ]
     )
+
+
+def render_filter_chip(group: str, label: str) -> str:
+    return (
+        f'<button type="button" class="pub-filter-chip" '
+        f'data-filter-group="{escape(group, quote=True)}" '
+        f'data-value="{escape(normalize_filter_value(label), quote=True)}">{escape(label)}</button>'
+    )
+
+
+def render_filter_controls(records: list[dict[str, Any]]) -> list[str]:
+    tags = unique_filter_values([tag for record in records for tag in record.get("tags", record.get("areas", []))])
+    venues = unique_filter_values([str(record.get("venue", "")) for record in records if normalize_whitespace(str(record.get("venue", "")))])
+    tag_buttons = " ".join(render_filter_chip("tags", tag) for tag in tags)
+    venue_buttons = " ".join(render_filter_chip("venues", venue) for venue in venues)
+    return [
+        '<div class="pub-filters" data-selected-tag="" data-selected-venue="">',
+        '  <div class="pub-filter-group" data-filter-group="tags">',
+        '    <span class="pub-filter-label">Tags</span>',
+        f'    <div class="pub-filter-options">{tag_buttons}</div>',
+        "  </div>",
+        '  <div class="pub-filter-group" data-filter-group="venues">',
+        '    <span class="pub-filter-label">Venues</span>',
+        f'    <div class="pub-filter-options">{venue_buttons}</div>',
+        "  </div>",
+        '  <button type="button" class="pub-filter-clear">Clear filters</button>',
+        "</div>",
+        "",
+    ]
 
 
 def render_publications_page(records: list[dict[str, Any]], heading: str, output_page: Path) -> str:
@@ -441,18 +588,19 @@ def render_publications_page(records: list[dict[str, Any]], heading: str, output
         "  - research",
         "---",
         "",
-        '<link rel="stylesheet" href="../../assets/stylesheets/publications.css">',
-        "",
         f"# {heading}",
         "",
+    ]
+    parts.extend(render_filter_controls(records))
+    parts.extend([
         "<ul>",
         "",
-    ]
+    ])
     current_year: int | None = None
     for record in sort_records(records):
         if record["year"] != current_year:
             current_year = record["year"]
-            parts.extend([f'<h2 class="year-separator">{current_year}</h2>', ""])
+            parts.extend([f'<h2 class="year-separator" data-publication-year="{current_year}">{current_year}</h2>', ""])
         parts.extend([render_record(record, output_page), ""])
     parts.append("</ul>")
     return "\n".join(parts).rstrip() + "\n"
