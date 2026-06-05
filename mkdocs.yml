@@ -40,11 +40,14 @@ extra_css:
   - stylesheets/publications.css
   - stylesheets/research-chat.css
   - stylesheets/computational-art.css
+  - stylesheets/webgl-background.css
 
 extra_javascript:
+  - javascripts/three.min.js
   - javascripts/publication-filters.js
   - javascripts/research-chat.js
   - javascripts/computational-art.js
+  - javascripts/webgl-background.js
 
 markdown_extensions:
   - attr_list
