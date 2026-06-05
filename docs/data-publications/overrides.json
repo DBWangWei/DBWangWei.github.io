@@ -1,0 +1,179 @@
+{
+  "fervvac:MSSP25-InverseProblem": {
+    "areas": [
+      "AI4S"
+    ],
+    "selected": true
+  },
+  "fervvac:SCIS26-TCADCalibration": {
+    "selected": true
+  },
+  "fervvac:TKDE25-BipartiteGraphClustering": {
+    "areas": [
+      "Graph"
+    ],
+    "selected": true
+  },
+  "fervvac:TKDE26-GNNDefender": {
+    "selected": true
+  },
+  "fervvac:TVT25-FatigueDetection": {
+    "areas": [
+      "DL",
+      "App"
+    ],
+    "selected": true
+  },
+  "fervvac:aaai25-Coreset": {
+    "areas": [
+      "DL"
+    ],
+    "selected": true
+  },
+  "fervvac:aclf26-DGPO": {
+    "selected": true
+  },
+  "fervvac:aclf26-IDEA": {
+    "selected": true
+  },
+  "fervvac:coling25-NESAlign": {
+    "areas": [
+      "LLM"
+    ],
+    "selected": true
+  },
+  "fervvac:ecai25-RobustAdvTraining": {
+    "areas": [
+      "AdvML"
+    ],
+    "selected": true
+  },
+  "fervvac:emnlp25-DetoxifyLLM": {
+    "areas": [
+      "LLM"
+    ],
+    "selected": true
+  },
+  "fervvac:emnlp25findings-FewshotER": {
+    "areas": [
+      "DB"
+    ],
+    "selected": true
+  },
+  "fervvac:emnlp25findings-InverseData4FT": {
+    "areas": [
+      "LLM"
+    ],
+    "selected": true
+  },
+  "fervvac:icassp25-ChatCAD": {
+    "areas": [
+      "LLM",
+      "App"
+    ],
+    "selected": true
+  },
+  "fervvac:icde24-constrainedSPD": {
+    "areas": [
+      "DB",
+      "Graph"
+    ],
+    "selected": true
+  },
+  "fervvac:icde25-ApproxDist": {
+    "areas": [
+      "LLM",
+      "DB"
+    ],
+    "selected": true
+  },
+  "fervvac:icde26-TensorLogRuleLearning": {
+    "areas": [
+      "DL"
+    ],
+    "selected": true
+  },
+  "fervvac:iclr25-BMC": {
+    "areas": [
+      "LLM"
+    ],
+    "selected": true
+  },
+  "fervvac:iclr25-DiffusionDD": {
+    "areas": [
+      "DL",
+      "DB"
+    ],
+    "selected": true
+  },
+  "fervvac:icme25-DialogAgent": {
+    "areas": [
+      "DL",
+      "App"
+    ],
+    "selected": true
+  },
+  "fervvac:icml25-MetricEmbedding": {
+    "areas": [
+      "Theory"
+    ],
+    "selected": true
+  },
+  "fervvac:icml26-GaussianParticlePDE": {
+    "selected": true
+  },
+  "fervvac:icml26-UAClarification": {
+    "selected": true
+  },
+  "fervvac:kdd25-MultiGraphNO": {
+    "areas": [
+      "AI4S",
+      "PDE"
+    ],
+    "selected": true
+  },
+  "fervvac:kdd25-balanceSG": {
+    "areas": [
+      "DB",
+      "Graph"
+    ],
+    "selected": true
+  },
+  "fervvac:kdd26-M2NO": {
+    "areas": [
+      "AI4S"
+    ],
+    "selected": true
+  },
+  "fervvac:mm25-GraphANNRouting": {
+    "areas": [
+      "LLM",
+      "DB"
+    ],
+    "selected": true
+  },
+  "fervvac:neurips25-LocalShapley": {
+    "areas": [
+      "XAI"
+    ],
+    "selected": true
+  },
+  "fervvac:sigspatial24-constrainedSPD": {
+    "areas": [
+      "DB",
+      "AI4S"
+    ],
+    "note": "Best Vision Paper",
+    "selected": true
+  },
+  "fervvac:vldb26-IndexSelectionAKNN": {
+    "areas": [
+      "ANN",
+      "High-Dim"
+    ],
+    "selected": true
+  },
+  "fervvac:vldb26-QuantProjAKNN": {
+    "selected": true
+  }
+}
