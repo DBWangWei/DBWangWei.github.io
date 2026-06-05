@@ -24,7 +24,7 @@ class ResearchChatAgent {
 
   async loadPublications() {
     try {
-      const response = await fetch('/data/publications/publications.cache.json');
+      const response = await fetch('/data-publications/publications.cache.json');
       const data = await response.json();
       this.publications = data.records;
     } catch (error) {
