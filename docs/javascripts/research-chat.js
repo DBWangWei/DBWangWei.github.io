@@ -106,6 +106,15 @@ class ResearchChatAgent {
       e.target.style.height = 'auto';
       e.target.style.height = Math.min(e.target.scrollHeight, 120) + 'px';
     });
+
+    // Add click handlers to suggestion items
+    document.addEventListener('click', (e) => {
+      if (e.target.closest('.suggestion-list li')) {
+        const suggestion = e.target.closest('li').textContent.replace(/['"]/g, '');
+        input.value = suggestion;
+        this.sendMessage();
+      }
+    });
   }
 
   toggleChat() {
