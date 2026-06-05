@@ -1,0 +1,160 @@
+<style>
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: Georgia, Palatino, 'Palatino Linotype', Times, 'Times New Roman', serif;
+    color: #111;
+    line-height: 125%;
+    margin-top: 2em;
+    font-weight: bold;
+  }
+
+  
+  h1 {
+    text-align: center;
+    border: 2px solid black;
+    border-bottom: 4px solid black;
+    padding: 5px 10px;
+    box-shadow: 
+      0px 2px black, 
+      2px 4px black,
+      4px 6px black;
+  }
+
+  h1x {
+    text-align: center;
+    padding-bottom: 10px;
+    border-bottom: 2px solid black;  
+    font-size: 2.5em;
+  }
+
+  hr {
+    display: block;
+    height: 2px;
+    border: 0;
+    border-top: 1px solid #aaa;
+    border-bottom: 1px solid #eee;
+    margin: 1em 0;
+    padding: 0;
+  }
+  
+
+
+  table {
+    margin: 0 auto; 
+    border-collapse: collapse;
+    width: 90%;
+  }
+  
+  th {
+    padding: .5em 1em;
+    background: #eee;
+    color: #333;
+    text-align: left;  
+  }
+  
+  td {
+    padding: .5em 1em;
+    border-top: 1px solid #aaa;
+  }
+  
+  tr:nth-child(even) {
+    background: #f9f9f9;
+  }
+
+  th:nth-child(1) {
+    width: 10%;  
+  }
+  th:nth-child(2) {
+    width: 30%;
+  }
+  th:nth-child(15) {
+    width: 30%;
+  }
+  th:nth-child(4) {
+    width: 30%;
+  }
+
+
+  
+  .author {
+    font-size: 1.2em;
+    text-align: center;
+  }
+  
+  @media only screen and (min-width: 480px) {
+    body {
+      font-size: 14px;
+    }
+  }
+  @media only screen and (min-width: 768px) {
+    body {
+      font-size: 16px;
+    }
+  }
+  @media print {
+    * {
+      background: transparent !important;
+      color: black !important;
+      filter: none !important;
+      -ms-filter: none !important;
+    }
+  
+    body {
+      font-size: 12pt;
+      max-width: 100%;
+    }
+  
+    a, a:visited {
+      text-decoration: underline;
+    }
+  
+    hr {
+      height: 1px;
+      border: 0;
+      border-bottom: 1px solid black;
+    }
+  
+    a[href]:after {
+      content: " (" attr(href) ")";
+    }
+  
+    abbr[title]:after {
+      content: " (" attr(title) ")";
+    }
+  
+    .ir a:after, a[href^="javascript:"]:after, a[href^="#"]:after {
+      content: "";
+    }
+  
+    pre, blockquote {
+      border: 1px solid #999;
+      padding-right: 1em;
+      page-break-inside: avoid;
+    }
+  
+    tr, img {
+      page-break-inside: avoid;
+    }
+  
+    img {
+      max-width: 100% !important;
+    }
+  
+    @page :left {
+      margin: 15mm 20mm 15mm 10mm;
+  }
+  
+    @page :right {
+      margin: 15mm 10mm 15mm 20mm;
+  }
+  
+    p, h2, h3 {
+      orphans: 3;
+      widows: 3;
+    }
+  
+    h2, h3 {
+      page-break-after: avoid;
+    }
+  }
+</style>
