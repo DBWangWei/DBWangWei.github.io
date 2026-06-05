@@ -72,8 +72,8 @@ nav:
     - Selected Talks: intro/talks_selected.md
     - Talks: intro/talks.md
     - Teaching: intro/teaching.md
-  - Research: 
-    - Overview: research/index.md
+  - Research:
+    - Research Overview: research/index.md
     - Current Research: 
       - DB: research/DB.md
       - LLM: research/LLM.md
