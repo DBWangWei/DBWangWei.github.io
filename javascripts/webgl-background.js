@@ -23,9 +23,10 @@ class WebGLBackground {
   }
 
   isHomePage() {
-    // Check if we're on the root/index page
+    // Check if we're on the root/index page only
     const path = window.location.pathname;
-    return path === '/' || path === '/index.html' || path.endsWith('/');
+    // Homepage is exactly / or /index.html (no subdirectories)
+    return path === '/' || path === '/index.html';
   }
 
   hasWebGLSupport() {
