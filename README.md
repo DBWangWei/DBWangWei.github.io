@@ -227,3 +227,4 @@ These are local helper scripts for copying the built site to a separate local Gi
   - `intro/publications_selected.md`
   - `intro/publications.md`
 - The build report is the first place to check when a publication update looks wrong.
+
