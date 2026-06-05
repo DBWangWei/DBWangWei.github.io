@@ -1,0 +1,102 @@
+site_name: Wei Wang's Homepage
+site_url: http://wei-wang.net
+theme:
+  logo: assets/logo.jpg
+  font:
+    text: Roboto Condensed
+    code: Roboto Mono
+  name: material
+  features:
+    - navigation.instant
+    - navigation.instant.prefetch
+    - navigation.instant.progress
+    - navigation.instant.preview
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.sections
+    - navigation.expand
+    - navigation.path
+    - toc.follow
+    - navigation.top
+  icon:
+    tag:
+      research: fontawesome/solid/atom
+      github: fontawesome/brands/github
+      info: fontawesome/solid/info
+      resource: fontawesome/solid/unlock
+      teaching: fontawesome/solid/question
+extra:
+  tags:
+    research: research
+    github: github
+    info: info
+    resource: resource
+    teaching: teaching
+
+
+extra_css:
+  - stylesheets/extra.css
+  - stylesheets/publications.css
+  - stylesheets/research-chat.css
+  - stylesheets/computational-art.css
+
+extra_javascript:
+  - javascripts/publication-filters.js
+  - javascripts/research-chat.js
+  - javascripts/computational-art.js
+
+markdown_extensions:
+  - attr_list
+  - md_in_html
+  - tables
+  - pymdownx.superfences
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.blocks.html
+  - pymdownx.blocks.admonition  
+
+plugins:
+  - glightbox
+  - tags
+  - search
+
+
+nav:
+  - About Me: 
+    - Introduction: index.md
+    - Research: research/index.md
+    - Projects: intro/projects.md
+    - Selected Publications: intro/publications_selected.md
+    - All Publications: intro/publications.md
+    - Selected Talks: intro/talks_selected.md
+    - Talks: intro/talks.md
+    - Teaching: intro/teaching.md
+  - Research: 
+    - Overview: research/index.md
+    - Current Research: 
+      - DB: research/DB.md
+      - LLM: research/LLM.md
+      - AI4S: research/AI4S.md
+    - Past Research: 
+      - Similarity Query Processing: research/simqp.md
+      - Keyword Search: research/keywordS.md
+      - Spatial DB: research/spatialdb.md     
+    - Vacancy: research/vacancy.md
+  - Teaching:
+    - Overview: teaching/index.md
+    - DSAA1001: DSAA1001/index.md
+    - DSAA2043: DSAA2043/index.md
+  - Resources:
+    - Tutorial:
+      - ER21 - Entity Resolution: resources/tutorials/ER21-tutorial-entity-resolution.md
+      - KDD21 - Similarity Query Processing: resources/tutorials/KDD21-tutorial-simqp-high-dim.md
+      - VLDB20 - Similarity Query Processing: resources/tutorials/VLDB20-tutorial-simqp-high-dim.md
+      - SIGMOD09 - Keyword Search: resources/tutorials/SIGMOD09-tutorial-keywordquery-in-db.md
+    - Computational Art: resources/art.md
+    - Pseudo-random Pix: resources/pix.md
+
+
+## comments
+## - To generate gallery: `python3 _gen_gallery.py > pix.md`
+## 
