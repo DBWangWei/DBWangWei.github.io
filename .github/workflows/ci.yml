@@ -42,7 +42,4 @@ jobs:
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./site
-          # For User Site, set the target_branch to main
-          target_branch: main
-          # Do not use a custom folder for User Site
-          # leave `path` blank or set to `/`
+          publish_branch: gh-pages
