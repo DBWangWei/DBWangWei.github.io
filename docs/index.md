@@ -1,5 +1,15 @@
 # Introduction
 
+/// html | div.hero-art-container
+<canvas id="hero-art" class="hero-art-canvas" data-art-type="network" data-animated="true"></canvas>
+<div class="hero-art-overlay">
+  <div class="hero-art-text">
+    <h2>Exploring the Intersection of Data, AI, and Science</h2>
+    <p>Research-driven innovation in databases, machine learning, and cross-disciplinary applications</p>
+  </div>
+</div>
+///
+
 <div class="grid" markdown>
 
 
@@ -14,10 +24,11 @@
 ///
 
 /// html | div[style='float: right;width: 65%;']
-I am currently a tenured **Professor** and the **Associate Thrust Head** in the [Data Science and Anaytics （数据科学与分析学域）](https://infh.hkust-gz.edu.cn/en/academics/dsa), [Information Hub （信息枢纽）](https://hkust-gz.edu.cn/academics/four-hubs/information-hub), [The Hong Kong University of Science and Technology (Guangzhou)](http://hkust-gz.edu.cn), and I am also an affiliated Professor at [HKUST](http://www.ust.hk). Previously, I was a Redbird Visiting Professor in the [Department of Computer Science and Engineering](http://www.cse.ust.hk), [HKUST](http://www.ust.hk), and a **Professor** in the School of Computer Science and Engineering, University of New South Wales, Australia. 
+I am currently a tenured **Professor** in the [Data Science and Anaytics （数据科学与分析学域）](https://infh.hkust-gz.edu.cn/en/academics/dsa), and the **Associate Dean** of [Information Hub （信息枢纽）](https://hkust-gz.edu.cn/academics/four-hubs/information-hub), [The Hong Kong University of Science and Technology (Guangzhou)](http://hkust-gz.edu.cn), and I am also an affiliated Professor at [HKUST](http://www.ust.hk). Previously, I was a Redbird Visiting Professor in the [Department of Computer Science and Engineering](http://www.cse.ust.hk), [HKUST](http://www.ust.hk), and a **Professor** in the School of Computer Science and Engineering, University of New South Wales, Australia. 
 
 /// admonition | Contact
 - Email:  `weiwcs AT ust.hk`
+- Office: W4 515 ([Campus Map](https://amat.hkust-gz.edu.cn/wp-content/uploads/2024/03/map@2x.jpg), [Campus Navigator](https://itd.hkust-gz.edu.cn/en/detail-361))
 - Google Scholar: [https://scholar.google.com/citations?user=wLtu3FYAAAAJ&hl=en](https://scholar.google.com/citations?user=wLtu3FYAAAAJ&hl=en)
 - Github: [https://github.com/DBAIWangGroup](https://github.com/DBAIWangGroup)
 ///
@@ -38,7 +49,7 @@ I have won several awards, including **SIGSPATIAL Best Vision Paper**, **ICASSP 
 My current research interests are: 
 
 * <mark>Integration of database and artificial intelligence technologies</mark>, including learned indexes, learned algorithms and optimizations, and intelligent data preprocess and postprocessing (e.g., data cleansing/integration and NLP interface for DB/applications). 
-* <mark>Machine Learning and Deep Learning</mark>, including <mark>Large Language Models</mark>, <mark>Natural Language Processing</mark>, <mark>Knowledge graphs</mark>, <mark>Security issues of deep learning models</mark> (e.g, adversarial attacks and defense).
+* <mark>Machine Learning and Deep Learning</mark>, including <mark>Large Language Models</mark>, <mark>Theoretical Aspects of Machine/deep Learning</mark>, and <mark>Agentic AI</mark>.
 * <mark>Understanding high-dimensional data</mark>, including its structure, properties, and algorithms (e.g., vector databases). 
 * <mark>Cross-disciplinary research and applications</mark>, including <mark>Material Informatics</mark> (e.g., material property prediction, material design, physics-informed neural networks, sybmolic regression, etc.), <mark>AI for Science</mark> (e.g., neural operator learning for solving PDEs), and <mark>AI for Education</mark>. 
 
@@ -51,14 +62,14 @@ Also see
 # Teaching
 
 - I am the **Computer Science Coordinator** of HKUST(GZ), in charge of all Computer Science-related courses in the first two years for our UG students. 
-- I am also overseeing teaching related issues (including teaching innovation and teaching quality) in the DSA thrust, HKUST(GZ). 
+- I am overseeing UG teaching related issues in the Information Hub, HKUST(GZ). 
 - Currently, we are building AI4Edu systems based on Large Language Models, with the aim to explore new learning paradigms. 
 
 # Service
 
 I am an Associate Editor of IEEE TKDE, Journal of Material Informatics, and Data Science and Engineering. I also served as PC Co-chairs of [IEEE BigData 2023](http://bigdataieee.org/BigData2023/) and APWeb 2012, PC Vice-chairs of ICDE 2014 and 2018. I also served in other organizational roles in many conferences and workshops, as well as reviewers and PC members for major journals and conferences.  
 
-I am the Vice Directors of Guangzhou Municipal Key Laboratory of Materials Informatics, Guangzhou Municipal Key Laboratory of Electronic Design Automation, Guangzhou Municipal Key Laboratory of Big Data and Intelligence. I am the Council Member of Guangzhou Intelligent Networking and New Energy Automobile Industry Talent Federation. 
+I am the Vice Directors of Guangzhou Municipal Key Laboratory of Materials Informatics, Guangzhou Municipal Key Laboratory of Electronic Design Automation, Guangzhou Municipal Key Laboratory of Big Data and Intelligence. 
 
 # Prospective Student
 

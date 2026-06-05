@@ -38,9 +38,13 @@ extra:
 extra_css:
   - stylesheets/extra.css
   - stylesheets/publications.css
+  - stylesheets/research-chat.css
+  - stylesheets/computational-art.css
 
 extra_javascript:
   - javascripts/publication-filters.js
+  - javascripts/research-chat.js
+  - javascripts/computational-art.js
 
 markdown_extensions:
   - attr_list
@@ -88,7 +92,8 @@ nav:
       - ER21 - Entity Resolution: resources/tutorials/ER21-tutorial-entity-resolution.md
       - KDD21 - Similarity Query Processing: resources/tutorials/KDD21-tutorial-simqp-high-dim.md
       - VLDB20 - Similarity Query Processing: resources/tutorials/VLDB20-tutorial-simqp-high-dim.md
-      - SIGMOD09 - Keyword Search: resources/tutorials/SIGMOD09-tutorial-keywordquery-in-db.md   
+      - SIGMOD09 - Keyword Search: resources/tutorials/SIGMOD09-tutorial-keywordquery-in-db.md
+    - Computational Art: resources/art.md
     - Pseudo-random Pix: resources/pix.md
 
 
